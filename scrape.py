@@ -81,7 +81,7 @@ def passingStatsList():
                  "Passing TD %:", "Sack %:", "QBR:", "Game-Winning Drives:"]   
     
     for i in fetchDB():
-        print(i)
+        # print(i)
         if i[1] in passGoals:
             if i[2] != None:
                 returnList.append([i[1], i[2], i[3]])
@@ -145,6 +145,6 @@ def clearDB():
 clearDB()    
 populateDB()
 
-print(passingStatsList())
+# print(passingStatsList())
 
 # print(res)
