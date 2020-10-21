@@ -145,6 +145,6 @@ def clearDB():
 clearDB()    
 populateDB()
 
-# print(passingStatsList())
+print(passingStatsList())
 
 # print(res)

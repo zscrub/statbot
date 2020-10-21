@@ -58,7 +58,7 @@ async def on_message(message):
         embed1 = discord.Embed(title ='Defensive Stat Leaders', color=0xA750DE)
         for i in scrape.defensiveStatsList():
             ++c
-            if len(i)==3:                
+            if len(i)==3:              
                 if c%2!=0:
                     embed1.add_field(name=i[0], value=(i[1]+' '+'('+i[2]+')'), inline=False)
                 elif c%2==0:
