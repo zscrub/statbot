@@ -5,27 +5,23 @@ teams = ["ari", "atl", "bal", "buf", "car", "chi", "cin", "cle", "dal", "den", "
          "gb", "hou", "ind", "jax", "kc", "lv", "lac", "lar", "mia", "min",
          "ne", "no", "nyg", "nyj", "phi", "pit", "sf", "sea", "tb", "ten", "wsh"
          ]
-
-    
+         
 def getTeamLeaders():
     teamLeadersList = []
     for team in teams:
         leaderList = []
+        queu_list = []
+
         url = "https://www.espn.com/nfl/team/stats/_/name/"+teams[teams.index(team)]
         page = requests.get(url)
-
         soup = BeautifulSoup(page.content, 'html.parser')
-        playerStats = soup.find(class_='StatLeaders flex')
-        playerStats_elems = playerStats.find_all('a')
         
-        for stats in playerStats_elems:
-            leaderList.append(str(stats.text))
-        teamLeadersList.append(leaderList)
+        number = soup.find(class_='clr-gray-01 pr3 hs2')
+        player_name = soup.find(class_='di n8')
+        stat_name = soup.find(class_='h8 mb2 clr-gray-03')
 
+        queu_list = stat_name.text, player_name.text, number.text
+        teamLeadersList.append(queu_list)
     return teamLeadersList
 
-# if getTeamLeaders()[0][-1][:13] == "Interceptions":
-#     print(getTeamLeaders()[0][-1][:getTeamLeaders()[0][-1].find('Interceptions')+1])
-
-
-# print(getTeamLeaders()[0][0])
+print(getTeamLeaders()[0][0])
