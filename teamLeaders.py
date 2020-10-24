@@ -78,15 +78,11 @@ def fetchDB():
 
 ### maybe broken??? makes dwane haskins on every team?????? ###
 def updateDB():
-    print('fetching new data...')
-    getTeamLeaders()
     print('out with the old...')
-    for statLists in getTeamLeaders():
-        print('updating {0}...'.format(teamsDict[statLists[0]]))
-        cursor.execute("UPDATE teamLeaders SET PassingLeader = ?, RushingLeader = ?, ReceivingLeader = ?, TackleLeader = ?, IntLeader = ?, Score1 = ?, Score2 = ?, Score3 = ?, Score4 = ?, Score5 = ?", 
-            (statLists[6], statLists[7], statLists[8], statLists[9], statLists[10], statLists[11], statLists[12], statLists[13], statLists[14], statLists[15]))
-        conn.commit()
-        print('done')
+    clearDB()
+    print('fetching new data...')
+    populateDB()
+    print('done')
     # res = cursor.fetchall()
     # return res
 

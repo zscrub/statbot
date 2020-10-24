@@ -212,7 +212,7 @@ async def on_message(message):
 
 ################ ################ ################ ################ ################ ################ 
     if message.content.startswith('!') and message.content[1:] in teamLeaders.teams:
-        teamname = teamsDict[message.content[1:]]
+        teamname = teamLeaders.teamsDict[message.content[1:]]
         embed1 = discord.Embed(title='Team Leaders for the {}'.format(teamname), color=0xA750DE)
         for i in teamLeaders.fetchDB():
             if i[1] == message.content[1:]:
@@ -228,7 +228,8 @@ async def on_message(message):
     if message.content.startswith('!update') and (str(message.author) == "10038#4741"):
         await message.channel.send('Updating...')
         teamLeaders.updateDB()
-        
+        await message.channel.send('Done!')
+
         
 ################ ################ ################ ################ ################ ################ 
 
