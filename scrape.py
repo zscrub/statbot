@@ -137,7 +137,7 @@ def specialTeamsStatsList():
                 returnList.append([i[1], i[3]])
     return returnList
     
-
+### set up update function >:( 
 def clearDB():
     cursor.execute("DELETE FROM stats;")
     conn.commit()
