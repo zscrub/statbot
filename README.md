@@ -1,6 +1,6 @@
 # StatBot
 
-This statbot fetches data from pro football reference, cbs sports, espn etc. for NFL data and stats.
+This statbot fetches data from pro football reference, cbs sports, espn etc. for publicly available NFL stats and data.
 
 Great to have for people who love to talk stats/look at standings.
 
