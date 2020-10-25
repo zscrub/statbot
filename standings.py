@@ -5,9 +5,9 @@ from bs4 import BeautifulSoup
 # conn = sqlite3.connect('standings.db')
 # cursor = conn.cursor()
 
-# c1 = """CREATE TABLE IF NOT EXISTS
-#     stats(stat_id INTEGER PRIMARY KEY, Team TEXT, Wins TEXT, Losses TEXT, Ties TEXT)
-# """
+c1 = """CREATE TABLE IF NOT EXISTS
+    stats(stat_id INTEGER PRIMARY KEY, Team TEXT, Wins TEXT, Losses TEXT, Ties TEXT)
+"""
 
 
 url = "https://www.cbssports.com/nfl/standings/"
@@ -29,8 +29,7 @@ def afcTeamStandings():
     for i in afcTeam_elems:
         afcTeamStandingList.append(i.text.split())
     return afcTeamStandingList
-# for i in nfcTeam_elems:
-#     print(i.text[0])
+
 
 def nfcTeamStandings():
     nfcTeamStandingList = []
@@ -47,7 +46,6 @@ def afcEast():
     seed2 = []
     seed3 = []
     seed4 = []
-
     for i in afcTeamStandings()[0:17]:
         seed1.append(i)
     for i in afcTeamStandings()[17:34]:
@@ -57,14 +55,13 @@ def afcEast():
     for i in afcTeamStandings()[51:68]:
         seed4.append(i)    
     return seed1, seed2, seed3, seed4
-
+afcEast()
 
 def afcNorth():
     seed1 = []
     seed2 = []
     seed3 = []
     seed4 = []
-
     for i in afcTeamStandings()[68:85]:
         seed1.append(i)
     for i in afcTeamStandings()[85:102]:
@@ -81,7 +78,6 @@ def afcSouth():
     seed2 = []
     seed3 = []
     seed4 = []
-
     for i in afcTeamStandings()[136:153]:
         seed1.append(i)
     for i in afcTeamStandings()[153:170]:
@@ -98,7 +94,6 @@ def afcWest():
     seed2 = []
     seed3 = []
     seed4 = []
-
     for i in afcTeamStandings()[204:221]:
         seed1.append(i)
     for i in afcTeamStandings()[221:238]:
@@ -117,7 +112,6 @@ def nfcEast():
     seed2 = []
     seed3 = []
     seed4 = []
-
     for i in nfcTeamStandings()[0:17]:
         seed1.append(i)
     for i in nfcTeamStandings()[17:34]:
@@ -134,7 +128,6 @@ def nfcNorth():
     seed2 = []
     seed3 = []
     seed4 = []
-
     for i in nfcTeamStandings()[68:85]:
         seed1.append(i)
     for i in nfcTeamStandings()[85:102]:
@@ -151,7 +144,6 @@ def nfcSouth():
     seed2 = []
     seed3 = []
     seed4 = []
-
     for i in nfcTeamStandings()[136:153]:
         seed1.append(i)
     for i in nfcTeamStandings()[153:170]:
@@ -168,7 +160,6 @@ def nfcWest():
     seed2 = []
     seed3 = []
     seed4 = []
-
     for i in nfcTeamStandings()[204:221]:
         seed1.append(i)
     for i in nfcTeamStandings()[221:238]:
@@ -178,4 +169,4 @@ def nfcWest():
     for i in nfcTeamStandings()[255:272]:
         seed4.append(i)    
     return seed1, seed2, seed3, seed4
-# print(afcTeamStandings())
+print(afcTeamStandings())
