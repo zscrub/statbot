@@ -137,13 +137,21 @@ def specialTeamsStatsList():
                 returnList.append([i[1], i[3]])
     return returnList
     
-### set up update function >:( 
+def updateDB():
+    print('out with the old...')
+    clearDB()
+    print('fetching new data...')
+    populateDB()
+    print('done')
+    # res = cursor.fetchall()
+    # return res
+
 def clearDB():
+    print('clearing...1')
     cursor.execute("DELETE FROM stats;")
     conn.commit()
+    print('done')
 
-clearDB()    
-populateDB()
 
 print(passingStatsList())
 

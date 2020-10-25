@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 # cursor = conn.cursor()
 
 c1 = """CREATE TABLE IF NOT EXISTS
-    stats(stat_id INTEGER PRIMARY KEY, Team TEXT, Wins TEXT, Losses TEXT, Ties TEXT)
+    standings(stat_id INTEGER PRIMARY KEY, Team TEXT, Wins TEXT, Losses TEXT, Ties TEXT)
 """
 
 

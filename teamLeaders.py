@@ -86,7 +86,7 @@ def updateDB():
     # return res
 
 def clearDB():
-    print('clearing...')
+    print('clearing...2')
     cursor.execute('DELETE FROM teamLeaders;')
     conn.commit()
     print('done')
