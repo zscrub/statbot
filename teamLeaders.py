@@ -76,7 +76,6 @@ def fetchDB():
     return res
 
 
-
 def updateDB():
     print('out with the old...')
     clearDB()
