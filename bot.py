@@ -1,4 +1,9 @@
-import token, scrape, discord, standings, teamLeaders
+import tkn
+import scrape
+import discord
+import standings
+import teamLeaders
+
 
 thumbnails = [
     "http://loodibee.com/wp-content/uploads/nfl-arizona-cardinals-team-logo-2-300x300.png",
@@ -40,7 +45,8 @@ nfl = ["http://loodibee.com/wp-content/uploads/nfl-league-logo-300x300.png",
            "http://loodibee.com/wp-content/uploads/nfl-nfc-National_Football_Conference_logo-300x300.png"]
 
 
-TOKEN = token.tkn
+TOKEN = tkn.tkn
+
 client = discord.Client()
 
 @client.event
