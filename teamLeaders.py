@@ -76,7 +76,7 @@ def fetchDB():
     return res
 
 
-### maybe broken??? makes dwane haskins on every team?????? ###
+
 def updateDB():
     print('out with the old...')
     clearDB()
