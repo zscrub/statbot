@@ -1,6 +1,7 @@
 import tkn
 import scrape
 import discord
+import schedule
 import standings
 import teamLeaders
 
@@ -45,7 +46,7 @@ nfl = ["http://loodibee.com/wp-content/uploads/nfl-league-logo-300x300.png",
            "http://loodibee.com/wp-content/uploads/nfl-nfc-National_Football_Conference_logo-300x300.png"]
 
 
-TOKEN = tkn.tkn
+TOKEN = tkn.tkn1
 
 client = discord.Client()
 
@@ -205,7 +206,8 @@ async def on_message(message):
         embed1.add_field(name="Special Teams Stats", value = "!special", inline=True)
         embed1.add_field(name="AFC Standings", value = "!afc", inline=True)
         embed1.add_field(name="NFC Standings", value = "!nfc", inline=True)
-        embed1.add_field(name="Team Leaders", value = "Type an ! and a team abreviation", inline=True)
+        embed1.add_field(name='Games from the Week', value = '!games', inline=True)
+        embed1.add_field(name="Team Leaders", value = "Type an ! and a team abreviation (for example: !nyg)", inline=True)
         
         embed1.set_thumbnail(url=nfl[0])
         await message.channel.send(embed=embed1)
@@ -232,9 +234,23 @@ async def on_message(message):
         scrape.updateDB()
         teamLeaders.updateDB()
         await message.channel.send('Done!')
-
-        
 ################ ################ ################ ################ ################ ################ 
+
+
+################ ################ ################ ################ ################ ################ 
+    if message.content.startswith('!games'):
+        embed1 = discord.Embed(title='Games from the Week', color=0xA750DE)
+        for i in schedule.games():
+            if i[0] != 'ESPN':
+                if ('pm') not in i[2] or ('am') not in i[2]:
+                    embed1.add_field(name=('{0} vs {1}'.format(i[0], i[1])), value='Result: {0}'.format(i[2]), inline=True)
+                else:
+                    embed1.add_field(name=('{0} vs {1}'.format(i[0], i[1])), value='Time: {0}'.format(i[2]), inline=True)
+
+            
+        await message.channel.send(embed=embed1)
+################ ################ ################ ################ ################ ################ 
+
 
 @client.event
 async def on_ready():
