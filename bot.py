@@ -229,7 +229,7 @@ async def on_message(message):
         
     if message.content.startswith('!update') and (str(message.author) == "10038#4741"):
         await message.channel.send('Updating...')
-        scrape.update()
+        scrape.updateDB()
         teamLeaders.updateDB()
         await message.channel.send('Done!')
 
