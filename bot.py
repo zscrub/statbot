@@ -229,7 +229,8 @@ async def on_message(message):
             
         await message.channel.send(embed=embed1)
         
-    if message.content.startswith('!update') and (str(message.author) == "10038#4741"):
+    ## botTerminal.z = the discord username specified to the account ##
+    if message.content.startswith('!update') and (str(message.author) == botTerminal.z):
         await message.channel.send('Updating...')
         scrape.updateDB()
         teamLeaders.updateDB()
@@ -251,6 +252,8 @@ async def on_message(message):
         await message.channel.send(embed=embed1)
 ################ ################ ################ ################ ################ ################ 
 
+
+### need to set up auto update ###
 
 @client.event
 async def on_ready():
