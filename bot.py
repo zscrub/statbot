@@ -229,8 +229,8 @@ async def on_message(message):
             
         await message.channel.send(embed=embed1)
         
-    ## botTerminal.z = the discord username specified to the account ##
-    if message.content.startswith('!update') and (str(message.author) == botTerminal.z):
+    ## tkn.z = the discord username specified to the account ##
+    if message.content.startswith('!update') and (str(message.author) == tkn.z):
         await message.channel.send('Updating...')
         scrape.updateDB()
         teamLeaders.updateDB()

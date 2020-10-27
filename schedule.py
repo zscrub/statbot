@@ -5,10 +5,12 @@ url = 'https://www.cbssports.com/nfl/schedule/'
 page = requests.get(url)
 soup = BeautifulSoup(page.content, 'html.parser')
 
+
+
 def games():
     matchup_elems = soup.find_all(class_="TableBase-bodyTd")
 
-    ## Get Week #
+    # gameLeaders = soup.find_all(class_= '?') 
 
     matchupsList = []
 
