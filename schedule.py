@@ -36,7 +36,7 @@ def games():
 
 
 def weeks(x):
-    if x > 0 and x < 18:
+    if int(x) >= 1 and int(x) <= 17:
         url2 = 'https://www.cbssports.com/nfl/schedule/2020/regular/{0}/'.format(x)
         page2 = requests.get(url2)
         soup2 = BeautifulSoup(page2.content, 'html.parser')
