@@ -1,13 +1,20 @@
 import requests, re
 from bs4 import BeautifulSoup
 
-url = 'https://www.cbssports.com/nfl/schedule/'
-page = requests.get(url)
-soup = BeautifulSoup(page.content, 'html.parser')
-
+teamRegions = ['Arizona', 'Atlanta', 'Baltimore', 'Buffalo', 'Carolina', 'Chicago', 
+               'Cincinnati', 'Clevland', 'Dallas', 'Denver', 'Detroit', 'Green Bay',
+               'Houston', 'Indianapolis', 'Jacksonville', 'Kansas City', 'Las Vegas',
+               'L.A. Chargers',  'L.A. Rams', 'Miami', 'Minnesota', 'New England', 'New Orleans', 'N.Y. Giants', 
+               'N.Y. Jets', 'Philidelphia', 'Pittsburgh', 'San Fransisco', 'Seattle',
+               'Tampa Bay', 'Tennessee', 'Washington'  
+]
 
 
 def games():
+    url = 'https://www.cbssports.com/nfl/schedule/'
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, 'html.parser')
+    
     matchup_elems = soup.find_all(class_="TableBase-bodyTd")
 
     # gameLeaders = soup.find_all(class_= '?') 
@@ -24,3 +31,5 @@ def games():
 
     # print(bigList)
     return bigList
+
+print(games())
