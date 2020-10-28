@@ -36,24 +36,25 @@ def games():
 
 
 def weeks(x):
-    url2 = 'https://www.cbssports.com/nfl/schedule/2020/regular/{0}/'.format(x)
-    page2 = requests.get(url2)
-    soup2 = BeautifulSoup(page2.content, 'html.parser')
-        
-    matchup_elems = soup2.find_all(class_="TableBase-bodyTd")
+    if x > 0 and x < 18:
+        url2 = 'https://www.cbssports.com/nfl/schedule/2020/regular/{0}/'.format(x)
+        page2 = requests.get(url2)
+        soup2 = BeautifulSoup(page2.content, 'html.parser')
+            
+        matchup_elems = soup2.find_all(class_="TableBase-bodyTd")
 
-    # gameLeaders = soup.find_all(class_= '?') 
+        # gameLeaders = soup.find_all(class_= '?') 
 
-    matchupsList = []
+        matchupsList = []
 
-    for i in matchup_elems:
-        matchupsList.append(' '.join(i.text.split()))
+        for i in matchup_elems:
+            matchupsList.append(' '.join(i.text.split()))
 
-    numOfGamesForTheWeek = len(matchupsList)/3
+        numOfGamesForTheWeek = len(matchupsList)/3
 
-    n = 0
-    bigList = [matchupsList[x:x+3] for x in range(0, len(matchupsList), 3)]
+        n = 0
+        bigList = [matchupsList[x:x+3] for x in range(0, len(matchupsList), 3)]
 
 
-    return bigList        
+        return bigList        
 
