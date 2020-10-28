@@ -6,9 +6,9 @@ from bs4 import BeautifulSoup
 teamRegions = ['Arizona', 'Atlanta', 'Baltimore', 'Buffalo', 'Carolina', 'Chicago', 
                'Cincinnati', 'Clevland', 'Dallas', 'Denver', 'Detroit', 'Green Bay',
                'Houston', 'Indianapolis', 'Jacksonville', 'Kansas City', 'Las Vegas',
-               'L.A. Chargers',  'L.A. Rams', 'Miami', 'Minnesota', 'New England', 'New Orleans', 'N.Y. Giants', 
-               'N.Y. Jets', 'Philidelphia', 'Pittsburgh', 'San Fransisco', 'Seattle',
-               'Tampa Bay', 'Tennessee', 'Washington'  
+               'L.A. Chargers',  'L.A. Rams', 'Miami', 'Minnesota', 'New England', 'New Orleans', 
+               'N.Y. Giants', 'N.Y. Jets', 'Philidelphia', 'Pittsburgh', 
+               'San Fransisco', 'Seattle', 'Tampa Bay', 'Tennessee', 'Washington'  
 ]
 
 url = 'https://www.cbssports.com/nfl/schedule/'

@@ -258,11 +258,12 @@ async def on_message(message):
         weekNum = msg[-1]
         embed1 = discord.Embed(title='NFL Schedule - Week {0}'.format(weekNum), color=0xA750DE)
         for i in schedule.weeks(weekNum):
-            if ('am' != i[2][-2:]) and ('pm' != i[2][-2:]):
-                embed1.add_field(name=('{0} vs {1}'.format(i[0], i[1])), value='Result: {0}'.format(i[2]), inline=True)
-            else:
-                embed1.add_field(name=('{0} vs {1}'.format(i[0], i[1])), value='Time: {0}'.format(i[2]), inline=True)
-       
+            if i[0] in schedule.teamRegions:    
+                if ('am' != i[2][-2:]) and ('pm' != i[2][-2:]):
+                    embed1.add_field(name=('{0} vs {1}'.format(i[0], i[1])), value='Result: {0}'.format(i[2]), inline=True)
+                else:
+                    embed1.add_field(name=('{0} vs {1}'.format(i[0], i[1])), value='Time: {0}'.format(i[2]), inline=True)
+        
         await message.channel.send(embed=embed1)
 ################ ################ ################ ################ ################ ################ 
 
