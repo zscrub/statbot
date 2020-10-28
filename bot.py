@@ -196,23 +196,6 @@ async def on_message(message):
 ################ ################ ################ ################ ################ ################ 
 
 
-################ ################ ################ ################ ################ ################ 
-    if message.content.startswith('!stats') or message.content.startswith('!help'):
-        embed1 = discord.Embed(title = 'Bot Commands', color=0xA750DE)
-
-        embed1.add_field(name="Passing Stats", value = "!qb", inline=True)
-        embed1.add_field(name="Offensive Yards", value = "!yds", inline=True)
-        embed1.add_field(name="Defensive Stats", value = "!defense", inline=True)
-        embed1.add_field(name="Special Teams Stats", value = "!special", inline=True)
-        embed1.add_field(name="AFC Standings", value = "!afc", inline=True)
-        embed1.add_field(name="NFC Standings", value = "!nfc", inline=True)
-        embed1.add_field(name='Games from the Week', value = '!games', inline=True)
-        embed1.add_field(name="Team Leaders", value = "Type an ! and a team abreviation (for example: !nyg)", inline=True)
-        
-        embed1.set_thumbnail(url=nfl[0])
-        await message.channel.send(embed=embed1)
-################ ################ ################ ################ ################ ################ 
-
 
 ################ ################ ################ ################ ################ ################ 
     if message.content.startswith('!') and message.content[1:] in teamLeaders.teams:
@@ -266,6 +249,26 @@ async def on_message(message):
         
         await message.channel.send(embed=embed1)
 ################ ################ ################ ################ ################ ################ 
+
+
+################ ################ ################ ################ ################ ################ 
+    if message.content.startswith('!stats') or message.content.startswith('!cmds') or message.content.startswith('!commands'):
+        embed1 = discord.Embed(title = 'Bot Commands', color=0xA750DE)
+
+        embed1.add_field(name="Passing Stats", value = "!qb", inline=True)
+        embed1.add_field(name="Offensive Yards", value = "!yds", inline=True)
+        embed1.add_field(name="Defensive Stats", value = "!defense", inline=True)
+        embed1.add_field(name="Special Teams Stats", value = "!special", inline=True)
+        embed1.add_field(name="AFC Standings", value = "!afc", inline=True)
+        embed1.add_field(name="NFC Standings", value = "!nfc", inline=True)
+        embed1.add_field(name='Games from the Week', value = '!games', inline=True)
+        embed1.add_field(name="Team Leaders", value = "Type an ! and a team abreviation (for example: !nyg)", inline=True)
+        embed1.add_field(name='Results/schedule for a given week', value = '!week followed by the week number (for example: !week 3)', inline=True)
+        
+        embed1.set_thumbnail(url=nfl[0])
+        await message.channel.send(embed=embed1)
+################ ################ ################ ################ ################ ################ 
+
 
 
 
