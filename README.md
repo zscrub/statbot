@@ -1,7 +1,5 @@
 # StatsBot
 
-This is a discord bot that fetches data from [Pro Football Reference](https://www.pro-football-reference.com/), [CBS Sport](https://www.cbssports.com/), [ESPN](https://www.espn.com/), ... . For publicly available NFL stats & data.
-
 It's a nice to have bot for people who love to talk about stats and have updated standings.
 
 Feel free to invite this bot to your discord guild using following link:
