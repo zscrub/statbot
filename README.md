@@ -1,9 +1,8 @@
 # StatsBot
 
-It's a nice to have bot for people who love to talk about stats and have updated standings.
+# THIS BOT WAS CREATED FOR EDUCATIONAL PURPOSES ONLY: NOT FOR PRACTICAL USE
 
-Feel free to invite this bot to your discord guild using following link:
-[Invite-link](https://discord.com/api/oauth2/authorize?client_id=766085551568060417&permissions=52288&scope=bot)
+The intention of this project was to learn about data scraping in an interesting way, focusing on football statistics and using discord to represent the data, however scraping and storing NFL data from these sources violates sites terms and conditions. Thus, this bot is not created for practical use. 
 
 ## Features
 
@@ -16,5 +15,3 @@ Feel free to invite this bot to your discord guild using following link:
 * ...
 
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
