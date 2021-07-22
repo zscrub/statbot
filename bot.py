@@ -264,9 +264,7 @@ async def on_message(message):
         embed1.add_field(name='Games from the Week', value = '!games', inline=True)
         embed1.add_field(name="Team Leaders", value = "Type an ! and a team abreviation (for example: !nyg)", inline=True)
         embed1.add_field(name='Results/schedule for a given week', value = '!week followed by the week number (for example: !week 3)', inline=True)
-
-        embed1.add_field(name='Donations', value = 'For anyone who would like to donate, my paypal link is paypal.me/zscrub. All donations are appreciated and comments/feedback is always heard!', inline=True)
-        embed1.add_field(name='Support', value = 'If there are any issues with this bot, feel free to add me on discord! 10038#4741')
+        
         embed1.set_thumbnail(url=nfl[0])
         await message.channel.send(embed=embed1)
 ################ ################ ################ ################ ################ ################ 
