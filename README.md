@@ -1,7 +1,17 @@
-# StatBot
+# StatsBot
 
-This statbot fetches data from pro football reference, cbs sports, espn etc. for publicly available NFL stats and data.
+# THIS BOT WAS CREATED FOR EDUCATIONAL PURPOSES ONLY: NOT FOR PRACTICAL USE
 
-Great to have for people who love to talk stats/look at standings.
+The intention of this project was to learn about data scraping in an interesting way, focusing on football statistics and using discord to represent the data, however scraping and storing NFL data from these sources violate the site's terms and conditions. Thus, this bot is not created for practical use. 
 
-Functions include standings, league leaders in stats, team leaders of the entire league and plenty more to come! 
+## Features
+
+* Standings
+* League leaders
+* Team leaders of the entire league
+* ...
+
+#### Coming soon:
+* ...
+
+
